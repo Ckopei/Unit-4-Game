@@ -1,6 +1,6 @@
 # Crystal Game
 
-For this project i built a number guessing game.
+For this project I built a number guessing game.
 Here's how the app works:
 
 * There will be four crystals displayed as buttons on the page.
