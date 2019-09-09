@@ -35,6 +35,7 @@ $(document).ready(function () {
         $(".button4").attr("value", button4)
         playerTotal = 0;
         if (computerNum % 10 === 0) {
+            $("#lucky").empty()
             $("#lucky").append("<img id='diamond' src='assets/images/diamond.png' alt='diamond'>")
         }
         else {
@@ -78,12 +79,15 @@ $(document).ready(function () {
                 //reset() for all numbers, no page refresh.
                 reset()
                 break;
+            default:
+                return;
         }
     });
 
-    //the % works is a remainder operator. this statements works on the logic of "if the remainder(not answer) of computerNum/10 is 0,
+    //the % works as a remainder operator. this statements works on the logic of "if the remainder(not answer) of computerNum/10 is 0,
     //it is divisible by 10 and the logic should run to make lucky diamond appear."
     if (computerNum % 10 === 0) {
+        $("#lucky").empty()
         $("#lucky").append("<img id='diamond' src='assets/images/diamond.png' alt='diamond'>")
     }
     else {
