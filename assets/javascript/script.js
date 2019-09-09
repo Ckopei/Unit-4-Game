@@ -1,5 +1,6 @@
 //theme of game TBD. Use base for now, change styling later. styling does not matter until script is completed.
-
+//below code forces page to load before javascript activates.
+$( document ).ready(function() {
 //player is shown a random goal number to work to. 19-120. 
 //Math.floor((Math.random() * 102) + 19);
 //math.floor with a range needs the range between the two numbers(+1) + the lower number. -TESTED ON W3SCHOOLS
@@ -45,6 +46,8 @@ var reset = function () {
 //add random button number to total score
 $("img").on("click", function () {
     //"this" below refers to $("img").on above, NOT the window.
+    //parseInt is used to take the number as an integer instead of a string. 
+    //+= is the syntax for x = x + y
     var newTotal = playerTotal += parseInt($(this).attr("value"));
     $(".playerTotal").html(newTotal);
    
@@ -67,6 +70,37 @@ $("img").on("click", function () {
             reset()
             break;
     }
+    
+});
+
+//switch for if computer === case, append the lucky diamond to div to auto win
+switch (computerNum) {
+    case 10:
+    case 20:
+    case 30:
+    case 40:
+    case 50:
+    case 60:
+    case 70:
+    case 80:
+    case 90:
+    case 100:
+    case 110:
+    case 120:
+        $("#lucky").append("<img id='diamond' src='assets/images/diamond.png' alt='diamond'>")
+        break;
+    default:
+        return;
+}
+
+$("#diamond").on("click", function(){
+    wins++;
+    $("#wins").html(wins)
+    reset();
+    $("#lucky").empty()
+})
+
+
 });
 
 //This way also works but I opted to learn switch statements instead.
