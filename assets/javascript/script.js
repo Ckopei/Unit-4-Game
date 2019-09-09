@@ -34,7 +34,7 @@ $(document).ready(function () {
         button4 = Math.floor((Math.random() * 12) + 1);
         $(".button4").attr("value", button4)
         playerTotal = 0;
-        if (computerNum % 2 === 0) {
+        if (computerNum % 10 === 0) {
             $("#lucky").append("<img id='diamond' src='assets/images/diamond.png' alt='diamond'>")
         }
         else {
@@ -83,7 +83,7 @@ $(document).ready(function () {
 
     //the % works is a remainder operator. this statements works on the logic of "if the remainder(not answer) of computerNum/10 is 0,
     //it is divisible by 10 and the logic should run to make lucky diamond appear."
-    if (computerNum % 2 === 0) {
+    if (computerNum % 10 === 0) {
         $("#lucky").append("<img id='diamond' src='assets/images/diamond.png' alt='diamond'>")
     }
     else {
