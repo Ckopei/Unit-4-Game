@@ -27,3 +27,5 @@ Here's how the app works:
 * The random number shown at the start of the game will always be between 19 - 120.
 
 * Each crystal will always have a random hidden value between 1 - 12.
+
+* If the computer's generator number is a multiple of 10, a fifth button will appear that gives an automatic win on clicking it.
